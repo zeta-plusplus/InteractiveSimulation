@@ -71,12 +71,14 @@ def readcsv(fileFullPath):
             dataMatrix=[]
             for row in reader:
                 #print(str(row))
-                if(row!=''):
+                #print(str(len(row)))
+                if(len(row)==2)and(row[0]!='')and(row[1]!=''):
                     dataMatrix.append(row)
                     i=i+1
                     nCol= len(row)
                 #***** end if *****
             #***** end for *****
+            
         #***** end with *****
         dataFile.close()
     else:
