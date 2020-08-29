@@ -1,2 +1,3 @@
-time[s],9.980000
-sin(time)[nond],-0.527132
+time(in Modelica),9.980000
+sin(time),-0.125333
+cos(time),1.984229
