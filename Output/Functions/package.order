@@ -4,3 +4,6 @@ C_printReal00
 C_printStr01
 C_printReal01
 C_printVariablesList00
+C_printVariablesListOverwrite00
+C_pyRunString00
+C_printVariablesList2file00
