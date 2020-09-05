@@ -1,0 +1,7 @@
+within InteractiveSimulation.System.Functions;
+
+function RunPythonScript00
+  extends Modelica.Icons.Function;
+algorithm
+
+end RunPythonScript00;

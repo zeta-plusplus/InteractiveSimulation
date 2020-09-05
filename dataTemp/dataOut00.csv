@@ -1,3 +1,3 @@
 time(in Modelica),9.980000
-sin(time),-0.125333
-cos(time),1.984229
+sin(time),10000
+cos(time),200000
