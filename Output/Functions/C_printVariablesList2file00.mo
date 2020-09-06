@@ -1,6 +1,8 @@
 within InteractiveSimulation.Output.Functions;
 
 function C_printVariablesList2file00
+  extends Modelica.Icons.Function;
+
   input String filePath;
   input String variableName[:];
   input Real variable[:];

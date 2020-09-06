@@ -1,6 +1,8 @@
 within InteractiveSimulation.Output.Functions;
 
 function C_printReal00
+  extends Modelica.Icons.Function;
+  
   input Real variable;
   
   external "C" printReal00(variable) annotation(

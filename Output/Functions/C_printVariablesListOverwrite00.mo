@@ -1,6 +1,8 @@
 within InteractiveSimulation.Output.Functions;
 
 function C_printVariablesListOverwrite00
+  extends Modelica.Icons.Function;
+
   input String variableName[:];
   input Real variable[:];
   

@@ -1,6 +1,8 @@
 within InteractiveSimulation.Output.Functions;
 
 function C_pyRunString00
+  extends Modelica.Icons.Function;
+
   input String s;
 external "C" annotation(Include="
 #include <Python.h>
