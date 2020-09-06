@@ -41,7 +41,7 @@ initial algorithm
   System.setEnvironmentVariable("PATH", namePythonPath, true);
   System.setWorkDirectory(nameFullPath);  // move to specified directory
   Streams.print("work dir is moved to: "+nameFullPath);
-  System.command("python "+nameFile); //
+  System.command("start python "+nameFile); //
   
   //----- move work directory back to default -----
   System.setWorkDirectory(defaultWorkDir);

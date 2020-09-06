@@ -24,7 +24,7 @@ int runPyScript00(const char *dirFullPath,
 	
 	
 	memset(commandLine, '\0', sizeof(commandLine));
-	strcat(commandLine, "python ");
+	strcat(commandLine, "start python ");
 	strcat(commandLine, fullFilePath);
 	printf("%s\n", commandLine);
 	system(commandLine);

@@ -60,7 +60,8 @@ initial algorithm
   Streams.print("script full file path: " + nameFullFilePathPyScript);
   
   System.setEnvironmentVariable("PATH", namePythonPath, true);
-  InteractiveSimulation.System.Functions.C_runPyScript00(nameFullPathPyScript, nameFilePyScript);
+  System.command("start python "+nameFullFilePathPyScript);
+  
   
 //******************************************************************************************
 algorithm

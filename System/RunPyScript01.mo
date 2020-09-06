@@ -31,7 +31,7 @@ initial algorithm
   Streams.print("script name: " + nameFile);
   
   System.setEnvironmentVariable("PATH", namePythonPath, true);
-  System.command("python " + nameFullFilePath);
+  System.command("start python " + nameFullFilePath);
   
   
   annotation(

@@ -39,7 +39,7 @@ initial algorithm
   Streams.print("script full file path: "+nameFullFilePath);
   
   System.setEnvironmentVariable("PATH", namePythonPath, true);
-  System.command("python "+nameFullFilePath); //
+  System.command("start python "+nameFullFilePath);
 
 annotation(
     defaultComponentName = "pyConsole",
