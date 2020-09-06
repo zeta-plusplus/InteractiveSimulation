@@ -17,7 +17,7 @@ block Run_pyConsole01
   /* ---------------------------------------------
         parameters
   --------------------------------------------- */
-  // NONE
+  parameter String namePythonPath= "C:/ProgramData/Anaconda3";
   
   
   /* ---------------------------------------------
@@ -45,6 +45,7 @@ initial algorithm
   Streams.print("script full file path: "+nameFullFilePath);
   
   //----- run pyConsole -----
+  System.setEnvironmentVariable("PATH", namePythonPath, true);
   System.setWorkDirectory(nameFullPath);
   Streams.print("work dir is moved to: "+nameFullPath);
   System.command("python "+nameFile); //

@@ -16,9 +16,9 @@ block RunPyScript00
   /* ---------------------------------------------
         parameters
   --------------------------------------------- */
-  parameter String nameFile = "pyScriptExample01.py";
-  parameter String namePath = "modelica://InteractiveSimulation/System";
-  
+  parameter String nameFile = "pyConsole02.py";
+  parameter String namePath = "modelica://InteractiveSimulation/Output";
+  parameter String namePythonPath= "C:/ProgramData/Anaconda3";
   
   /* ---------------------------------------------
         variable
@@ -38,6 +38,7 @@ initial algorithm
   Streams.print("script name: "+nameFile);
   
   //----- run pyConsole -----
+  System.setEnvironmentVariable("PATH", namePythonPath, true);
   System.setWorkDirectory(nameFullPath);  // move to specified directory
   Streams.print("work dir is moved to: "+nameFullPath);
   System.command("python "+nameFile); //

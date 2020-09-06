@@ -15,8 +15,10 @@ block RunPyScript01
   /* ---------------------------------------------
           parameters
     --------------------------------------------- */
-  parameter String nameFile = "pyScriptExample01.py";
-  parameter String namePath = "modelica://InteractiveSimulation/System";
+  parameter String nameFile = "pyConsole02.py";
+  parameter String namePath = "modelica://InteractiveSimulation/Output";
+  parameter String namePythonPath= "C:/ProgramData/Anaconda3";
+  
   //******************************************************************************************
 protected
   parameter String nameFullPath = Files.loadResource(namePath);
@@ -28,6 +30,7 @@ initial algorithm
   Streams.print("full path: " + nameFullPath);
   Streams.print("script name: " + nameFile);
   
+  System.setEnvironmentVariable("PATH", namePythonPath, true);
   System.command("python " + nameFullFilePath);
   
   

@@ -17,7 +17,8 @@ block Run_pyConsole02
   /* ---------------------------------------------
         parameters
   --------------------------------------------- */
-  // NONE
+  parameter String namePythonPath= "C:/ProgramData/Anaconda3";
+  
   
 //******************************************************************************************
 protected
@@ -37,6 +38,7 @@ initial algorithm
   Streams.print("script name: "+nameFile);
   Streams.print("script full file path: "+nameFullFilePath);
   
+  System.setEnvironmentVariable("PATH", namePythonPath, true);
   System.command("python "+nameFullFilePath); //
 
 annotation(
