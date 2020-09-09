@@ -1,3 +1,4 @@
-time(in Modelica),19.980000
-sin(time),-0.125333
-cos(time),1.984230
+time[s],29.900000
+m_flow[kg/s],34.700000
+P_I[kPa],370.771320
+T_O[K},288.232607

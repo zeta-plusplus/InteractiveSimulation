@@ -24,7 +24,7 @@ block dispVarPyConsole02_00
   parameter String namePathPyScript = "modelica://InteractiveSimulation/Output";
   
   parameter String nameVariables[nVariables] = {"var1"};
-  parameter Modelica.SIunits.Time tInterval = 20.0 / 1000.0 "in [s]";
+  parameter Modelica.SIunits.Time tInterval = 100.0 / 1000.0 "in [s]";
   //********** Initialization Parameters **********
   parameter Modelica.SIunits.Time tPrevPrint_init = 0.0 "" annotation(
     Dialog(tab = "Initialization"));
@@ -44,28 +44,34 @@ block dispVarPyConsole02_00
     Placement(visible = true, transformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   //******************************************************************************************
 protected
+  /* ---------------------------------------------
+          parameters
+  --------------------------------------------- */
   parameter String nameFilePathDataCSV = namePathDataCSV + "/" + nameFileDataCSV;
   parameter String nameFullFilePathDataCSV = Files.loadResource(nameFilePathDataCSV);
   
   parameter String nameFullPathPyScript = Files.loadResource(namePathPyScript);
   parameter String nameFilePathPyScript = namePathPyScript + "/" + nameFilePyScript;
   parameter String nameFullFilePathPyScript = Files.loadResource(nameFilePathPyScript);
+  
+  
   //******************************************************************************************
 initial algorithm
-//----- display inputs on command line -----
+  //----- display inputs on command line -----
+  Streams.print("writing csv: " + nameFullFilePathDataCSV);
   Streams.print("full path: " + nameFullPathPyScript);
   Streams.print("script name: " + nameFilePyScript);
   Streams.print("script full file path: " + nameFullFilePathPyScript);
-  
+  //----- execute python script -----
   System.setEnvironmentVariable("PATH", namePythonPath, true);
   System.command("start python "+nameFullFilePathPyScript);
+  
+  
 //******************************************************************************************
 algorithm
-  if initial() == true then
-    print("writing csv: " + nameFullFilePathDataCSV);
-  end if;
+  
   dtSincePrevPrint := time - tPrevPrint;
-  if tInterval <= dtSincePrevPrint then
+  if (tInterval <= dtSincePrevPrint) then
     dtSincePrevPrint := 0.0;
     tPrevPrint := time;
     Functions.C_printVariablesList2file00(nameFullFilePathDataCSV, nameVariables, u_variables);
