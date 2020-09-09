@@ -36,7 +36,6 @@ initial algorithm
 // move to specified directory
   Streams.print("work dir is moved to: " + nameFullPath);
   System.command(nameFullFilePath);
-  
 //----- move work directory back to default -----
   System.setWorkDirectory(defaultWorkDir);
   Streams.print("work dir is moved back to: " + defaultWorkDir);
@@ -47,5 +46,5 @@ algorithm
   end when;
   annotation(
     defaultComponentName = "RunPyScript",
-    Icon(graphics = {Rectangle(origin = {0, 1}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 99}, {100, -101}}), Text(origin = {1, -79}, extent = {{-101, 3}, {99, -17}}, textString = "%name"), Text(origin = {1, 7}, extent = {{-101, 13}, {99, -17}}, textString = "RunPyScript00")}, coordinateSystem(initialScale = 0.1)));
+    Icon(graphics = {Rectangle(origin = {0, 1}, fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 99}, {100, -101}}), Text(origin = {1, -79}, extent = {{-101, 3}, {99, -17}}, textString = "%name"), Text(origin = {1, 27}, extent = {{-101, 13}, {99, -17}}, textString = "RunBatch"), Text(origin = {1, -3}, extent = {{-101, 13}, {99, -17}}, textString = "rev.00")}, coordinateSystem(initialScale = 0.1)));
 end RunBatch00;

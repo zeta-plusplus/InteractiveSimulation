@@ -30,7 +30,7 @@ algorithm
   annotation(
     defaultComponentName = "DispOnCmd",
     Diagram(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, lineThickness = 1, extent = {{-100, 100}, {100, -100}}), Text(origin = {-11, 0}, extent = {{-85, 40}, {105, -40}}, textString = "Disp. on command"), Text(origin = {-9, -92}, extent = {{-85, 18}, {103, -2}}, textString = "%name")}, coordinateSystem(initialScale = 0.1)),
-  Icon(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Text(origin = {-3, 21}, extent = {{-87, 17}, {87, -17}}, textString = "Print"), Text(origin = {-7, -17}, extent = {{-87, 17}, {97, -27}}, textString = "Command Line")}));
+  Icon(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Text(origin = {-3, 43}, extent = {{-87, 17}, {87, -17}}, textString = "Print"), Text(origin = {-5, 15}, extent = {{-87, 17}, {97, -27}}, textString = "Command Line"), Text(origin = {-7, -25}, extent = {{-93, 17}, {107, -13}}, textString = "rev.00"), Text(origin = {-7, -85}, extent = {{-93, 7}, {107, -13}}, textString = "%name")}, coordinateSystem(initialScale = 0.1)));
   
   
   

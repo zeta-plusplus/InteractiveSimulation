@@ -50,9 +50,7 @@ protected
   parameter String nameFullPathPyScript = Files.loadResource(namePathPyScript);
   parameter String nameFilePathPyScript = namePathPyScript + "/" + nameFilePyScript;
   parameter String nameFullFilePathPyScript = Files.loadResource(nameFilePathPyScript);
-  
-  
-//******************************************************************************************
+  //******************************************************************************************
 initial algorithm
 //----- display inputs on command line -----
   Streams.print("full path: " + nameFullPathPyScript);
@@ -61,8 +59,6 @@ initial algorithm
   
   System.setEnvironmentVariable("PATH", namePythonPath, true);
   System.command("start python "+nameFullFilePathPyScript);
-  
-  
 //******************************************************************************************
 algorithm
   if initial() == true then
@@ -77,7 +73,7 @@ algorithm
 //******************************************************************************************
   annotation(
     defaultComponentName = "dispVarPyConsole",
-    Icon(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Text(origin = {4, 83}, extent = {{-78, 11}, {78, -19}}, textString = "disp. var"), Text(origin = {2, 45}, extent = {{-102, 13}, {98, -17}}, textString = "pyConsole02"), Text(origin = {-12, -77}, extent = {{-88, -1}, {112, -21}}, textString = "%name")}, coordinateSystem(initialScale = 0.1)),
+    Icon(graphics = {Rectangle(fillColor = {255, 255, 255}, fillPattern = FillPattern.Solid, extent = {{-100, 100}, {100, -100}}), Text(origin = {2, 61}, extent = {{-102, 19}, {98, -17}}, textString = "pyConsole02"), Text(origin = {-12, -77}, extent = {{-88, -1}, {112, -21}}, textString = "%name"), Text(origin = {2, 27}, extent = {{-102, 13}, {98, -7}}, textString = "rev.00")}, coordinateSystem(initialScale = 0.1)),
     experiment(StartTime = 0, StopTime = 10, Tolerance = 1e-06, Interval = 0.02),
     __OpenModelica_simulationFlags(lv = "LOG_STATS", outputFormat = "mat", s = "dassl"));
 end dispVarPyConsole02_00;
