@@ -38,7 +38,7 @@ algorithm
   uReal := if u then 1.0 else 0.0;
   
   when(pre(u)==false)and(u==true)then
-    varAcmltd:= varAcmltd + uReal*scl;
+    varAcmltd:= pre(varAcmltd) + uReal*scl;
   end when;
   
   y:= varAcmltd;

@@ -22,7 +22,7 @@ block dispVarPyConsole02_00
   
   
   parameter String nameVariables[nVariables] = {"var1"};
-  parameter Modelica.SIunits.Time tInterval = 100.0 / 1000.0 "in [s]";
+  parameter Modelica.SIunits.Time tInterval = 0.1 "in [s]";
   
   
   /* ---------------------------------------------

@@ -9,7 +9,7 @@ block AccumulateDigitalInputSignal01
       --------------------------------------------- */
   parameter Real varInit = 0.0 "inital value of y";
   parameter Real scl = 1.0 "scale onto u";
-  parameter Real dt=0.01 "sampling time to accumulate";
+  parameter Real dt=0.1 "sampling time to accumulate";
   parameter Real kTimeInterval=1.0 "factor multiplied onto time interval";
   /* ---------------------------------------------
                 internal variable   
@@ -34,7 +34,7 @@ algorithm
   uReal := if u then 1.0 else 0.0;
   
   when(time<>0)and(sample(0, dt)==true) then
-    varAcmltd := varAcmltd + (uReal * scl) * (kTimeInterval*dt);
+    varAcmltd := pre(varAcmltd) + (uReal * scl) * (kTimeInterval*dt);
   end when;
   
   y := varAcmltd;
