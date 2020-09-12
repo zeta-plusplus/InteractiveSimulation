@@ -20,8 +20,6 @@ block dispVarPyConsole02_00
   parameter String nameFileDataCSV = "dataOut00.csv";
   parameter String namePathDataCSV = "modelica://InteractiveSimulation/dataTemp";
   
-  parameter String nameFilePyScript = "pyConsole02.py";
-  parameter String namePathPyScript = "modelica://InteractiveSimulation/Output";
   
   parameter String nameVariables[nVariables] = {"var1"};
   parameter Modelica.SIunits.Time tInterval = 100.0 / 1000.0 "in [s]";
@@ -44,6 +42,9 @@ protected
   /* ---------------------------------------------
           parameters
   --------------------------------------------- */
+  parameter String nameFilePyScript = "pyConsole02.py";
+  parameter String namePathPyScript = "modelica://InteractiveSimulation/Output";
+  
   parameter String nameFilePathDataCSV = namePathDataCSV + "/" + nameFileDataCSV;
   parameter String nameFullFilePathDataCSV = Files.loadResource(nameFilePathDataCSV);
   
