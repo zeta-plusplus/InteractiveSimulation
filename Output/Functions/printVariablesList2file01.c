@@ -3,69 +3,45 @@
 int printVariablesList2file01(const char *,
 							const char **, int,
 							const double *, int,
-							double, double, double,
+							int,
 							
-							double *,int *);
+							int *);
 
 int printVariablesList2file01(const char *filePath,
 						const char **str, int nSizeStr,
 						const double *variable, int nSizeVariable,
-						double time, double tInterval, double dtSincePrevPrint,
+						int nPrinted_in,
 						
-						double *tPrevPrint_out, int *flagPrinted)
+						int *nPrinted_out)
 {
 	int i;
 	FILE *filePtr;
-	//double dtSincePrevPrint;
 	
+	filePtr= fopen(filePath,"w");
 	
-	//dtSincePrevPrint= time - tPrevPrint_in;
-	(*flagPrinted)=0;
-	
-	if(tInterval<=dtSincePrevPrint)
+	if(filePtr==NULL)
 	{
-		
-		
-		(*tPrevPrint_out)= time;
-		
-		filePtr= fopen(filePath,"w");
-		
-		if(filePtr==NULL)
-		{
-			printf("failed to open file\n");
-			printf("file path: %s\n", filePath);
-		}
-		else
-		{
-			if(nSizeStr==nSizeVariable)
-			{
-				for(i=0; i<nSizeStr; i++)
-				{
-					fprintf(filePtr, "%s,", *str);
-					fprintf(filePtr, "%lf\n", variable[i]);
-					str++;
-				}
-			}
-			else
-			{
-				printf("error, printVariablesList00: nSizeStr!=nSizeVariable");
-			}
-		}
-		fclose(filePtr);
-		(*flagPrinted)=1;
+		printf("failed to open file\n");
+		printf("file path: %s\n", filePath);
 	}
 	else
 	{
-		if(0<dtSincePrevPrint)
+		if(nSizeStr==nSizeVariable)
 		{
-			(*tPrevPrint_out)=time-dtSincePrevPrint;
+			for(i=0; i<nSizeStr; i++)
+			{
+				fprintf(filePtr, "%s,", *str);
+				fprintf(filePtr, "%lf\n", variable[i]);
+				str++;
+			}
+			(*nPrinted_out)= nPrinted_in + 1;
 		}
 		else
 		{
-			(*tPrevPrint_out)=time;
+			printf("error, printVariablesList00: nSizeStr!=nSizeVariable");
 		}
-		
-		(*flagPrinted)=0;
 	}
+	
+	fclose(filePtr);
 	return 0;
 }

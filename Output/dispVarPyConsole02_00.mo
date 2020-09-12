@@ -25,23 +25,20 @@ block dispVarPyConsole02_00
   
   parameter String nameVariables[nVariables] = {"var1"};
   parameter Modelica.SIunits.Time tInterval = 100.0 / 1000.0 "in [s]";
-  //********** Initialization Parameters **********
-  parameter Modelica.SIunits.Time tPrevPrint_init = 0.0 "" annotation(
-    Dialog(tab = "Initialization"));
-  parameter Modelica.SIunits.Time dtSincePrevPrint_init = 0.0 "" annotation(
-    Dialog(tab = "Initialization"));
+  
+  
   /* ---------------------------------------------
           Internal variables
-      --------------------------------------------- */
-  discrete Modelica.SIunits.Time tPrevPrint(fixed = true, start = tPrevPrint_init) "" annotation(
-    Dialog(tab = "Variables", group = "start attribute", enable = false, showStartAttribute = true));
-  Modelica.SIunits.Time dtSincePrevPrint(fixed = true, start = dtSincePrevPrint_init) "" annotation(
-    Dialog(tab = "Variables", group = "start attribute", enable = false, showStartAttribute = true));
+   --------------------------------------------- */
+  discrete Integer nPrinted;
+  
+  
   /* ---------------------------------------------
           Interface
-      --------------------------------------------- */
+   --------------------------------------------- */
   input Modelica.Blocks.Interfaces.RealInput u_variables[nVariables] annotation(
     Placement(visible = true, transformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-110, 0}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+  
   //******************************************************************************************
 protected
   /* ---------------------------------------------
@@ -66,16 +63,15 @@ initial algorithm
   System.setEnvironmentVariable("PATH", namePythonPath, true);
   System.command("start python "+nameFullFilePathPyScript);
   
+  nPrinted:=0;
   
 //******************************************************************************************
 algorithm
   
-  dtSincePrevPrint := time - tPrevPrint;
-  if (tInterval <= dtSincePrevPrint) then
-    dtSincePrevPrint := 0.0;
-    tPrevPrint := time;
-    Functions.C_printVariablesList2file00(nameFullFilePathDataCSV, nameVariables, u_variables);
-  end if;
+  when(sample(tInterval, tInterval))then
+    (nPrinted):=Functions.C_printVariablesList2file01(nameFullFilePathDataCSV, nameVariables, u_variables, pre(nPrinted));
+  end when;
+  
 //******************************************************************************************
   annotation(
     defaultComponentName = "dispVarPyConsole",
