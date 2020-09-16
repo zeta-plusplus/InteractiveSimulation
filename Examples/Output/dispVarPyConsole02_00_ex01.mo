@@ -10,9 +10,9 @@ model dispVarPyConsole02_00_ex01
     Placement(visible = true, transformation(origin = {30, -80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Add add1 annotation(
     Placement(visible = true, transformation(origin = {-10, 10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  InteractiveSimulation.Input.AccumulateDigitalInputSignal01 Accumulate(scl = 0.1)  annotation(
+  InteractiveSimulation.Input.AccumulateDigitalInputSignal01 Accumulate(scl = 0.5)  annotation(
     Placement(visible = true, transformation(origin = {-50, 20}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  InteractiveSimulation.Input.AccumulateDigitalInputSignal01 Accumulate1(scl = -0.1)  annotation(
+  InteractiveSimulation.Input.AccumulateDigitalInputSignal01 Accumulate1(scl = -0.5)  annotation(
     Placement(visible = true, transformation(origin = {-50, -20}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   InteractiveSimulation.Output.dispVarPyConsole02_00 dispVarPyConsole(nVariables = 5, nameVariables = {"time[s]", "u", "2*u", "sin(u)", "cos(u)"})  annotation(
     Placement(visible = true, transformation(origin = {90, -30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
