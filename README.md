@@ -3,6 +3,12 @@
 ## License
 All library source cords and example models are licensed with GPL v3.
 
+## Overview
+Refer to short videos linked below to see what you can do with this library.
+https://www.youtube.com/watch?v=TlSYxKoQ7x8
+https://www.youtube.com/watch?v=ZCFIJRW1upc
+https://www.youtube.com/watch?v=vT5K97d5qOA
+
 ## Purpose & Usage
 Modelica utility library and tools by Python and C for real-time input/output during simulation.
 Components in this libray are supposed to be used together with Modelica_DeviceDrivers library which is part of OpenModelica 3rd party library by default.
