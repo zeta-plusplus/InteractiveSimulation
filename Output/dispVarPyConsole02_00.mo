@@ -15,7 +15,7 @@ block dispVarPyConsole02_00
   /* ---------------------------------------------
           parameters
       --------------------------------------------- */
-  parameter String namePythonPath = "C:/ProgramData/Anaconda3";
+  parameter String namePythonPath = "C:\Program Files\Python39";
   parameter Integer nVariables = 1 "number of variables";
   parameter String nameFileDataCSV = "dataOut00.csv";
   parameter String namePathDataCSV = "modelica://InteractiveSimulation/dataTemp";
