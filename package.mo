@@ -2,6 +2,6 @@ package InteractiveSimulation
   extends Modelica.Icons.UtilitiesPackage;
 
   annotation(
-    uses(Modelica_DeviceDrivers(version = "1.8.2"), Modelica(version = "3.2.3"))
+    uses(Modelica_DeviceDrivers(version = "2.1.1"), Modelica(version = "4.0.0"))
     );
 end InteractiveSimulation;
