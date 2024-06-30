@@ -1,6 +1,6 @@
 within InteractiveSimulation.System;
 
-model terminateWhenTriggered
+block terminateWhenTriggered
   Modelica.Blocks.Interfaces.BooleanInput u_trigger annotation(
     Placement(transformation(origin = {-120, 0}, extent = {{-20, -20}, {20, 20}}), iconTransformation(origin = {-110, 0}, extent = {{-10, -10}, {10, 10}})));
 

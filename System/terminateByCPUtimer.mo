@@ -1,6 +1,6 @@
 within InteractiveSimulation.System;
 
-model terminateByCPUtimer
+block terminateByCPUtimer
   import units= Modelica.Units.SI;
   
   parameter units.Time tTerminate=100;

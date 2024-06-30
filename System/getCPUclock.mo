@@ -1,6 +1,6 @@
 within InteractiveSimulation.System;
 
-model getCPUclock
+block getCPUclock
   "CPU time since commence of simulation"
   parameter Integer sigDigits=4;
   
