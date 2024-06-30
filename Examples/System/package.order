@@ -1,3 +1,6 @@
 RunPyScript00_ex01
 RunPyScript01_ex01
 C_runPyScript00_ex01
+getCPUclock_ex01
+terminateWhenTriggered_ex01
+terminateByCPUtimer_ex01

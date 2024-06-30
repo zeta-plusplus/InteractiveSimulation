@@ -1,4 +1,7 @@
 Functions
+getCPUclock
+terminateWhenTriggered
+terminateByCPUtimer
 RunPyScript00
 RunPyScript01
 RunPyScript02

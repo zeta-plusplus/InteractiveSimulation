@@ -7,7 +7,7 @@ block dispVarPyConsole02_00
   import Modelica.Utilities.Streams;
   import Modelica.Utilities.Files;
   import Modelica.Utilities.System;
-  import Modelica.SIunits;
+  import units = Modelica.Units.SI;
   import InteractiveSimulation.Output.Functions;
   /********************************************************
           Declaration
@@ -22,7 +22,7 @@ block dispVarPyConsole02_00
   
   
   parameter String nameVariables[nVariables] = {"var1"};
-  parameter Modelica.SIunits.Time tInterval = 0.1 "in [s]";
+  parameter units.Time tInterval = 0.1 "in [s]";
   
   
   /* ---------------------------------------------
